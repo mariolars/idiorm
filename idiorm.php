@@ -1291,6 +1291,9 @@
          * added for each element. In this case, $value is ignored.
          */
         public function where($column_name, $value=null) {
+            if(is_null($value)){
+                return $this->where_null($column_name);
+            }
             return $this->where_equal($column_name, $value);
         }
 
